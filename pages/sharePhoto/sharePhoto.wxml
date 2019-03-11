@@ -1,0 +1,22 @@
+<!--pages/SharePhoto/SharePhoto.wxml-->
+<view class="tempview">
+  <image src='{{imagePath}}' style='width:100%;height:100%;margin:0;padding:0'></image>
+</view>
+<view class="drawer_btn_block">
+  <button class="save-img" open-type='share'>
+    分享给好友
+  </button>
+
+  <button class="save-img" bindtap='saveImg'>
+    保存到相册
+  </button>
+</view>
+
+<block wx:if="{{iphone}}">
+    <canvas class="drawer_content_canvas {{hiddenCanvas?'hidden-view':''}}" canvas-id="shareCanvas" >
+    </canvas>
+</block>
+<block wx:else>
+    <canvas class="drawer_content_canvas" canvas-id="shareCanvas">
+    </canvas>
+</block>

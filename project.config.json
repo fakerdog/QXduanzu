@@ -1,0 +1,52 @@
+{
+	"description": "七夕短租(20180815)",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.2",
+	"appid": "wx1f1d7c67b108aa5c",
+	"projectname": "qrjDuanZu",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "result",
+					"pathName": "pages/result/result",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "SharePhoto",
+					"pathName": "pages/SharePhoto/SharePhoto"
+				}
+			]
+		}
+	}
+}

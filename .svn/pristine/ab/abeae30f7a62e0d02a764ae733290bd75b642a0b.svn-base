@@ -1,0 +1,171 @@
+// pages/result/result.js
+var app = getApp();
+const ShareUtil = require("../../utils/ShareUtil.js");
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    arr:[],
+    hello:"你好！",
+    showAvatar:true,
+    items:[
+      { tittle: "冒充男朋友",bgc:"#fff",id:"0"},
+      { tittle: "冒充女朋友", bgc: "#fff", id: 1},
+      { tittle: "陪过夜(倒贴)", bgc: "#fff", id: 2},
+      { tittle: "牵牵小手", bgc: "#fff", id: 3},
+      { tittle: "亲亲小嘴", bgc: "#fff", id:4},
+      { tittle: "哄你睡觉觉", bgc: "#fff", id: 5},
+      { tittle: "一起蹦迪", bgc: "#fff", id: 6},
+      { tittle: "当你小弟", bgc: "#fff", id: 7},
+      { tittle: "抱抱你", bgc: "#fff", id: 8},
+      { tittle: "陪打麻将", bgc: "#fff", id: 9},
+      { tittle: "陪看电影", bgc: "#fff", id: 10},
+      { tittle: "代打前任", bgc: "#fff", id: 11},
+      { tittle: "叫你起床", bgc: "#fff", id: 12}, 
+      { tittle: "向你告白", bgc: "#fff", id: 13}, 
+      { tittle: "带你吃鸡", bgc: "#fff", id: 14}, 
+      { tittle: "给你做饭", bgc: "#fff", id: 15}, 
+      { tittle: "一起吃火锅", bgc: "#fff", id: 16}, 
+      { tittle: "介绍对象给你", bgc: "#fff", id: 17}, 
+      { tittle: "一起开黑", bgc: "#fff", id: 18}, 
+      { tittle: "共进晚餐", bgc: "#fff", id: 19}, 
+      { tittle: "陪买衣服", bgc: "#fff", id: 20}, 
+      { tittle: "陪你唱歌", bgc: "#fff", id: 21}, 
+      { tittle: "假装情侣", bgc: "#fff", id: 22}, 
+      { tittle: "唱歌给你听", bgc: "#fff", id: 23}, 
+      { tittle: "打扫卫生", bgc: "#fff", id: 24}, 
+      { tittle: "跟你撒娇", bgc: "#fff", id: 25}, 
+      { tittle: "陪你喝酒", bgc: "#fff", id: 26}, 
+      { tittle: "逗你开心", bgc: "#fff", id: 27}, 
+      { tittle: "说情话撩你", bgc: "#fff", id: 28}, 
+      { tittle: "帮你洗衣服", bgc: "#fff", id: 29}, 
+      { tittle: "抓娃娃", bgc: "#fff", id: 30}, 
+      { tittle: "吃好吃的", bgc: "#fff", id: 31}, 
+      { tittle: "一起运动", bgc: "#fff", id: 32}, 
+      { tittle: "陪你下午茶", bgc: "#fff", id: 33}, 
+      { tittle: "拜见父母", bgc: "#fff", id: 34}, 
+      { tittle: "说情话暖你", bgc: "#fff", id: 35}, 
+      { tittle: "一起跑步", bgc: "#fff", id: 36}, 
+      { tittle: "一起游泳", bgc: "#fff", id: 37}, 
+      { tittle: "穿情侣装", bgc: "#fff", id: 38}
+    ]
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    wx.showShareMenu({
+      withShareTicket: true
+    });
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+  
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+  
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+  
+  },
+  chageBgc:function(e){
+    
+    var index=e.target.dataset.d;
+    var text ="items["+index+"].bgc";
+    var bg = this.data.items[index].bgc == "#fff" ? "#FF808B" :"#fff";
+    if (this.data.arr.length < 8) {
+      if (bg =="#FF808B"){
+      var txt = e.target.dataset.t;
+      this.data.arr.push(txt);
+    }else{
+      var txt=e.target.dataset.t;
+      var fg = this.data.arr.indexOf(txt);
+      this.data.arr.splice(fg,1)
+    }
+    this.setData({
+      [text]: bg
+    })
+    }else{
+      var txt = e.target.dataset.t;
+      var fg = this.data.arr.indexOf(txt);
+      if(fg!=-1){
+      this.data.arr.splice(fg, 1)
+       this.setData({
+      [text]: bg
+    })
+      }
+    }
+  },
+  toSharePage:function(){
+    var tempFilePaths = this.data.tempFilePaths;
+    var textArr=this.data.arr;
+    if(textArr.length>0){
+    app.globalData.textArr = textArr;
+
+    wx.navigateTo({
+      url: '../SharePhoto/SharePhoto?touxiang='+tempFilePaths
+    })
+    }else{
+      wx.showToast({
+        title: '请至少选择一个你的经营项目',
+        icon: "none"
+        
+      })
+    }
+  },
+
+  dianji:function(){
+    wx.chooseImage({
+      count: 1,
+      success: res => {
+        this.setData({
+          tempFilePaths:res.tempFilePaths,
+          showAvatar:false
+        })
+       
+      }
+    })
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return ShareUtil.shareCard();
+  }
+})

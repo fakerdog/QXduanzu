@@ -1,0 +1,112 @@
+/* pages/result/result.wxss */
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  display: block;
+  margin: 0px 20px;
+}
+
+.moduleView{
+  display: flex;
+}
+.module{
+  width: 450rpx;
+  height: 140rpx;
+  margin-top: 20rpx;
+}
+.item-view {
+  width: 208rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  font-size: 28rpx;
+  border: 4rpx solid #FF808B;
+  border-radius: 25px;
+  float: left;
+  margin: 8rpx 14rpx;
+}
+.topfixed{
+  width:100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background-color: #fff;
+}
+.deadline{
+  height: 250rpx;
+}
+.bottomfixed{
+  position: fixed;
+  width: 100%;
+  height: 200rpx;
+  background-color:#ddd;
+  left:0;
+  bottom: 0px;
+}
+.clearfix:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.setprice{
+  display: inline-block;
+  width: 120rpx;
+  border:4rpx solid #ff0000;
+  vertical-align: center;
+  margin-bottom: -15rpx;
+  margin-right: 6rpx;
+}
+.inputview{
+  height: 80rpx;
+  line-height: 80rpx;
+  /* text-align: center; */
+  margin: 20rpx 0;
+  letter-spacing:2px;
+}
+.photobtn{
+  width: 340rpx;
+  height: 80rpx;
+  background-color:pink;
+  text-align: center;
+  line-height: 80rpx;
+  margin:50rpx auto;
+  border: 2px solid #000;
+  border-radius: 20px;
+}
+.world{
+  margin-top: 25rpx;
+  font-weight: 700;
+}
+.avatartemp{
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 50%;
+  margin-left: 46rpx;
+}
+.changeBtn{
+  display: flex;
+}
+.selectBtn{
+  width: 208rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: skyblue;
+  border: 2rpx solid skyblue;
+  margin-top: 10rpx;
+  margin-left: 15rpx;
+}
+.hoverBtn{
+  width:190rpx;
+  height: 60rpx;
+  line-height: 58rpx;
+  background-color: skyblue;
+}

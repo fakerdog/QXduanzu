@@ -1,0 +1,18 @@
+//app.js
+App({
+
+  //服务器地址
+  // HTTP_SERVER: "http://192.168.1.127:8080/xgApp/",
+  HTTP_SERVER: "https://wxapp.xiguazuji.com/",
+  
+  CDN_URL: "https://zuji.weixinpy.com/huilu/",
+
+  onLaunch: function () {
+    
+  },
+
+  globalData: {
+    userInfo: null
+  }
+
+})

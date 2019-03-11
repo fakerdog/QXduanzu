@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="btn-view">
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="indexbtn">我要出租自己</button>
+</view>
+
+<navigator target="miniProgram" app-id="{{sellAdvaceObj.appid}}" path="{{sellAdvaceObj.path}}" wx:if="{{sellAdvaceObj.showPromotAdvance}}">
+  <view class="index-promot-advance">
+    <image src='{{sellAdvaceObj.image}}' bindtap='toAdvance' style='width:100%;height:100%'></image>
+  </view>
+</navigator>
+
+
+<view class="footer">
+  <image src='../../images/index.jpg'></image>
+</view>

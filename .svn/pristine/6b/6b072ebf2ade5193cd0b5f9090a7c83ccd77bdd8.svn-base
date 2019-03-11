@@ -1,0 +1,24 @@
+<!--pages/result/result.wxml-->
+<view class="topfixed">
+<view class="moduleView">
+  <view bindtap='dianji'>
+  <open-data class="user-avatar" type="userAvatarUrl" wx:if="{{showAvatar}}"></open-data>
+  <image class="avatartemp" src='{{tempFilePaths}}' wx:if="{{!showAvatar}}"></image>
+  </view>
+  <view class="module">
+      <image src='../../images/module.png' style='width:100%;height:100%'></image>
+  </view>
+</view>
+  <view class="world">请选择你的8个出租项目</view>
+</view>
+<view class="deadline"></view>
+<view class="clearfix">
+  <view wx:for="{{items}}" wx:key="{{index}}" bindtap='chageBgc'>
+    <view style='background-color:{{item.bgc}};color:{{item.color}}' class="item-view" data-d='{{index}}' data-t='{{item.tittle}}'>{{item.tittle}}</view>
+  </view>
+</view>
+<view style='width:100%;height:230rpx'></view>
+<view class="bottomfixed">
+    <view class="photobtn" catchtap='toSharePage'>生成海报</view>
+</view>
+ 

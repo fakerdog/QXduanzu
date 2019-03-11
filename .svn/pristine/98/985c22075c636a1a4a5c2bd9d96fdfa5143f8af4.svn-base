@@ -1,0 +1,7 @@
+<!--index.wxml-->
+  <view class="btn-view">
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="indexbtn">我要出租自己</button>
+  </view>
+<view class="footer">
+  <image src='../../images/index.jpg'></image>
+</view>
